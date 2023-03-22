@@ -1,4 +1,5 @@
 import math
+from matplotlib import pyplot
 sumBefore = float(input('сумма ='))
 procent = float(input('годовой процент ='))
 numYears = int(input('сколько лет прошло ='))
@@ -19,6 +20,11 @@ while (sumAfter <= 800) :
         procent = procent + abs(An)
         for i in range(1,numYears+1):
             sumAfter = sumAfter + (sumAfter*procent)/100.0
+            summ[i] = sumAfter
+            year[i] = i
         n = n+1
-print ('наши денюжки = ', "{:8.2f}".format(sumBefore))
-print ('наш процент = ', "{:8.2f}".format(procent))
+#print ('наши денюжки = ', "{:8.2f}".format(sumBefore))
+#print ('наш процент = ', "{:8.2f}".format(procent))
+
+pyplot.plot(year, sum, color='magenta', label="Деньги")
+pyplot.show()
